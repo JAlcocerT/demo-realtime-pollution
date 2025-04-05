@@ -1,0 +1,34 @@
+#version: '3'
+
+services:
+  taipy-webapp:
+    image: taipy_webapp
+    container_name: taipy_webapp
+    volumes:
+      - taipy_webapp:/app
+    working_dir: /app
+    # command: /bin/sh -c "\
+    #   python3 app.py"
+    command: tail -f /dev/null 
+    ports:
+      - "9999:9999"
+    restart: always
+    # environment:
+    #   Platform: x300 #bme280 #pi4
+    # networks:
+    #   - cloudflare_tunnel
+      # - nginx_default   
+    #restart: always   
+
+# networks:
+#   cloudflare_tunnel:
+#     external: true
+  # nginx_default:
+  #   external: true
+
+volumes:
+  taipy_webapp:
+
+#docker-compose up -d
+
+#docker exec -it taipy_webapp /bin/bash 

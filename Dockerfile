@@ -21,3 +21,6 @@ RUN pip install -r requirements.txt
 COPY . .
 
 CMD ["taipy", "run", "--no-debug", "--no-reloader", "main.py", "-H", "0.0.0.0", "-P", "5000"]
+
+#docker build -t taipy_webapp .
+#podman build -t taipy_webapp .
